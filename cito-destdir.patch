@@ -1,0 +1,18 @@
+--- cito-0.3.0/Makefile.orig	2013-01-31 12:23:48.000000000 +0100
++++ cito-0.3.0/Makefile	2013-04-13 11:43:59.660060100 +0200
+@@ -36,13 +36,13 @@
+ install-cito: cito.exe
+ 	mkdir -p $(DESTDIR)$(prefix)/lib/cito $(DESTDIR)$(prefix)/bin
+ 	cp $< $(DESTDIR)$(prefix)/lib/cito/cito.exe
+-	(echo '#!/bin/sh' && echo 'exec /usr/bin/mono $(DESTDIR)$(prefix)/lib/cito/cito.exe "$$@"') >$(DESTDIR)$(prefix)/bin/cito
++	(echo '#!/bin/sh' && echo 'exec /usr/bin/mono $(prefix)/lib/cito/cito.exe "$$@"') >$(DESTDIR)$(prefix)/bin/cito
+ 	chmod 755 $(DESTDIR)$(prefix)/bin/cito
+ 
+ install-cipad: cipad.exe
+ 	mkdir -p $(DESTDIR)$(prefix)/lib/cito $(DESTDIR)$(prefix)/bin
+ 	cp $< $(DESTDIR)$(prefix)/lib/cito/cipad.exe
+-	(echo '#!/bin/sh' && echo 'exec /usr/bin/mono $(DESTDIR)$(prefix)/lib/cito/cipad.exe "$$@"') >$(DESTDIR)$(prefix)/bin/cipad
++	(echo '#!/bin/sh' && echo 'exec /usr/bin/mono $(prefix)/lib/cito/cipad.exe "$$@"') >$(DESTDIR)$(prefix)/bin/cipad
+ 	chmod 755 $(DESTDIR)$(prefix)/bin/cipad
+ 
+ uninstall:
