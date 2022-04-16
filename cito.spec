@@ -13,6 +13,8 @@ URL:		https://github.com/pfusik/cito
 # .NET 3.5 - what is minimal mono version?
 BuildRequires:	mono-csharp >= 3
 Requires:	mono >= 3
+# only bytecode inside
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
