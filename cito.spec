@@ -2,14 +2,14 @@ Summary:	Ci programming language
 Summary(en.UTF-8):	Ć programming language
 Summary(pl.UTF-8):	Język programowania Ć
 Name:		cito
-Version:	0.3.0
-Release:	2
+Version:	0.4.0
+Release:	1
 License:	GPL v3+
 Group:		Development/Languages
 Source0:	http://downloads.sourceforge.net/cito/%{name}-%{version}.tar.gz
-# Source0-md5:	794676f282dc8a2d0b9af220a92ad349
+# Source0-md5:	ce204e0e8595a326a6175113f271384c
 Patch0:		%{name}-destdir.patch
-URL:		http://cito.sourceforge.net/
+URL:		https://github.com/pfusik/cito
 # .NET 3.5 - what is minimal mono version?
 BuildRequires:	mono-csharp >= 3
 Requires:	mono >= 3
@@ -35,7 +35,8 @@ się "cito".
 %patch0 -p1
 
 %build
-%{__make}
+%{__make} \
+	CSC=mcs
 
 %install
 rm -rf $RPM_BUILD_ROOT
